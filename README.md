@@ -1,4 +1,4 @@
-# Ayushiiitu Intern Task 3
+# Intern Task
 
 This project consists of a **client** (React with Vite) and a **server** (Node.js with Express and MongoDB) for task management.
 
@@ -44,7 +44,7 @@ Full API documentation is available on Postman:
 4. Click "Send" to execute the request and view the response.
 
 ## UI Screenshots
-![Alt text](images/example.png)
+![Demo Image](client/src/assets/demo1.png)
 
 ---
 
