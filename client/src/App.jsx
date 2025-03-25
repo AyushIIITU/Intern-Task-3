@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { FaClipboardList } from "react-icons/fa";
 import { TaskForm } from './Components/TaskForm.jsx';
 import { TaskItem } from './Components/TaskItem.jsx';
@@ -18,7 +18,7 @@ function App() {
       const tasks = await taskApi.getTasks();
       setTasks(tasks);
     } catch (error) {
-      if(error.response.status === 404) {
+      if(error?.response?.status === 404) {
         setTasks([]);
         toast('No tasks found');
       } else {

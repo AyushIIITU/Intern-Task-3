@@ -4,7 +4,7 @@ const TasksController = {
     getAllTask: async (req, res) => {
         try {
             const tasks = await Task.find();
-            if(!tasks) {
+            if(!tasks|| tasks.length === 0) {
                 return res.status(404).json({ message: 'No tasks found' });
             }
             res.status(200).json(tasks);
@@ -40,7 +40,7 @@ const TasksController = {
             const { title, description, completed } = req.body; 
             result.title = title || result.title;
             result.description = description || result.description;
-            result.completed = completed ;
+            result.completed = completed === undefined ? result.completed : completed;
             await result.save();
             res.status(200).json(result);
         } catch (error) {
